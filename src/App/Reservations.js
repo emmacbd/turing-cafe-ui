@@ -9,6 +9,7 @@ const Reservations =({reservations}) => {
       <ResyCard
         id= {resy.id}
         name={resy.name}
+        date={resy.date}
         time={resy.time}
         number={resy.number}
         key={resy.id}

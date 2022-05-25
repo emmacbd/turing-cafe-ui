@@ -18,6 +18,24 @@ handleChange = event => {
   this.setState({[event.target.name]:event.target.value})
 }
 
+submitResy = event => {
+  event.preventDefault();
+  const newResy = {
+    id: Date.now(),
+    ...this.state
+  }
+  this.props.addResy(newResy)
+  this.clearInputs();
+}
+
+clearInputs = () => {
+  this.setState({
+  name: '',
+  date: '',
+  time: '',
+  number: undefined})
+}
+
   render(){
     return (
       <form className="form">
@@ -31,13 +49,13 @@ handleChange = event => {
         <input
           type='date'
           placeholder='Date (mm/dd)'
-          name='datetime-local'
+          name='date'
           value={this.state.date}
           onChange={event => this.handleChange(event)}
           />
 
          <input
-          type='text'
+          type='time'
           placeholder='Time'
           name='time'
           value={this.state.time}
@@ -53,7 +71,7 @@ handleChange = event => {
           onChange={event => this.handleChange(event)}
           />
 
-        <button className="resy-button">MAKE RESERVATION</button>
+        <button className="resy-button" onClick={event => this.submitResy(event)}>MAKE RESERVATION</button>
       </form>
     )
   }
