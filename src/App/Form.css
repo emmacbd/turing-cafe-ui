@@ -1,0 +1,10 @@
+.form {
+  margin: auto;
+  display:flex;
+}
+
+.resy-button {
+  color:white;
+  background-color:teal;
+  width: 30%
+}
