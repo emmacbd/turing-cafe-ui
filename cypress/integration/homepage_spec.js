@@ -4,6 +4,9 @@ describe("Homepage", () => {
   });
 
   it('Should display existing reservations to user',() => {
-    cy.contains()
+    cy.get('.resy-box').children().should('have.length', 9)
+    cy.get('.resy-box').children().first().should('include.text', 'Christie')
   })
+
+
 })
