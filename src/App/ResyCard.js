@@ -8,6 +8,7 @@ const ResyCard = ({id, name, time, number}) => {
       <h2>{name}</h2>
       <h2>{time}</h2>
       <h2>Number of guests: {number}</h2>
+      <button className="cancel-button">Cancel</button>
     </div>
   )
 }
